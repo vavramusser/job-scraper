@@ -1,17 +1,11 @@
 import sqlite3
 conn = sqlite3.connect('jobs.db')
 c = conn.cursor()
+c.execute("SELECT COUNT(*), SUM(is_new) FROM jobs")
+total, new_count = c.fetchone()
+print(f"Total jobs: {total}, New jobs: {new_count}, Old jobs: {total - (new_count or 0)}")
 
-# Check Abt descriptions
-c.execute("SELECT title, length(description) FROM jobs WHERE company='Abt Global' LIMIT 3")
-print("Abt Global jobs:")
+c.execute("SELECT title, is_new FROM jobs LIMIT 5")
 for row in c.fetchall():
-    print(f"  {row[0]}: {row[1]} characters")
-
-# Check PHI descriptions for comparison
-c.execute("SELECT title, length(description) FROM jobs WHERE company='PHI' LIMIT 3")
-print("\nPHI jobs:")
-for row in c.fetchall():
-    print(f"  {row[0]}: {row[1]} characters")
-
+    print(f"  {row[0]}: is_new={row[1]}")
 conn.close()

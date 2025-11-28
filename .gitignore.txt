@@ -19,3 +19,11 @@ env/
 # OS
 .DS_Store
 Thumbs.db
+
+# test code
+test.py
+
+# non-functional scrapers
+scraper_cna.py
+scraper_icf.py
+scraper_rand.py

@@ -11,6 +11,8 @@ from database import init_db, store_jobs
 from scraper_abt import scrape_abt
 #from scraper_cna import scrape_cna
 from scraper_phi import scrape_phi
+#from scraper_icf import scrape_icf
+from scraper_innocence import scrape_innocence
 #from scraper_rand import scrape_rand
 from scraper_rti import scrape_rti
 
@@ -44,7 +46,13 @@ if __name__ == "__main__":
     new_abt_jobs = store_jobs(abt_jobs)
     display_new_jobs(new_abt_jobs)
 
-    print("Scraping PHI...")
+    print("\nScraping Innocence Project...")
+    innocence_jobs = scrape_innocence()
+    print(f"Found {len(innocence_jobs)} total Innocence Project jobs")
+    new_innocence_jobs = store_jobs(innocence_jobs)
+    display_new_jobs(new_innocence_jobs)
+
+    print("\nScraping PHI...")
     phi_jobs = scrape_phi() 
     print(f"Found {len(phi_jobs)} total PHI jobs")
     new_phi_jobs = store_jobs(phi_jobs)

@@ -28,6 +28,13 @@ def store_jobs(jobs):
     c = conn.cursor()
     new_jobs = []
     
+    # First, get today's date
+    from datetime import datetime
+    today = datetime.now().strftime('%Y-%m-%d')
+    
+    # Mark all jobs that weren't found today as old (is_new = 0)
+    c.execute('UPDATE jobs SET is_new = 0 WHERE date_found != ?', (today,))
+    
     for job in jobs:
         try:
             c.execute('''INSERT INTO jobs (company, title, url, location, description, date_found)

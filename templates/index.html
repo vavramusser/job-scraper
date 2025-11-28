@@ -79,6 +79,20 @@
         <a href="{{ job.url }}" class="job-link" target="_blank">View Job</a>
     </div>
     {% endfor %}
+
+    {% if old_jobs %}
+    <div class="section-header" style="background-color: #9E9E9E;">PREVIOUSLY SEEN JOBS</div>
+    
+    {% for job in old_jobs %}
+    <div class="job-card" style="border-left-color: #9E9E9E;">
+        <div class="job-title">{{ job.title }}</div>
+        <div class="job-company">{{ job.company }}</div>
+        <div>Location: {{ job.location }}</div>
+        <div>Found: {{ job.date_found }}</div>
+        <a href="{{ job.url }}" class="job-link" target="_blank">View Job</a>
+    </div>
+    {% endfor %}
+    {% endif %}
     
 </body>
 </html>
