@@ -1,0 +1,21 @@
+# Database
+jobs.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+venv/
+env/
+
+# IDE
+.vscode/
+*.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
