@@ -10,6 +10,8 @@ from database import init_db, store_jobs
 # import site-specific scraper functions
 from scraper_abt import scrape_abt
 #from scraper_cna import scrape_cna
+from scraper_earthjustice import scrape_earthjustice
+from scraper_geoowl import scrape_geoowl
 from scraper_phi import scrape_phi
 #from scraper_icf import scrape_icf
 from scraper_innocence import scrape_innocence
@@ -45,6 +47,18 @@ if __name__ == "__main__":
     print(f"Found {len(abt_jobs)} total Abt jobs")
     new_abt_jobs = store_jobs(abt_jobs)
     display_new_jobs(new_abt_jobs)
+
+    print("\nScraping Earthjustice...")
+    earthjustice_jobs = scrape_earthjustice()
+    print(f"Found {len(earthjustice_jobs)} total Earthjustice jobs")
+    new_earthjustice_jobs = store_jobs(earthjustice_jobs)
+    display_new_jobs(new_earthjustice_jobs)
+
+    print("\nScraping GeoOwl...")
+    geoowl_jobs = scrape_geoowl()
+    print(f"Found {len(geoowl_jobs)} total GeoOwl jobs")
+    new_geoowl_jobs = store_jobs(geoowl_jobs)
+    display_new_jobs(new_geoowl_jobs)
 
     print("\nScraping Innocence Project...")
     innocence_jobs = scrape_innocence()
