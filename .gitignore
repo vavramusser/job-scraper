@@ -21,6 +21,7 @@ env/
 Thumbs.db
 
 # test code
+main_tester.py
 test.py
 
 # meta information
