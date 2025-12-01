@@ -7,16 +7,16 @@ import time
 # import database functions
 from database import init_db, store_jobs
 
-# import site-specific scraper functions
-from scraper_abt import scrape_abt
-#from scraper_cna import scrape_cna
-from scraper_earthjustice import scrape_earthjustice
-from scraper_geoowl import scrape_geoowl
-from scraper_phi import scrape_phi
-#from scraper_icf import scrape_icf
-from scraper_innocence import scrape_innocence
-#from scraper_rand import scrape_rand
-from scraper_rti import scrape_rti
+# import scraper functions
+from scrapers.scraper_abt import scrape_abt
+from scrapers.scraper_americanforests import scrape_americanforests
+from scrapers.scraper_earthjustice import scrape_earthjustice
+from scrapers.scraper_esri import scrape_esri
+from scrapers.scraper_geoowl import scrape_geoowl
+from scrapers.scraper_phi import scrape_phi
+from scrapers.scraper_planet import scrape_planet
+from scrapers.scraper_innocence import scrape_innocence
+from scrapers.scraper_rti import scrape_rti
 
 # display new jobs
 def display_new_jobs(jobs):
@@ -42,17 +42,29 @@ if __name__ == "__main__":
     print("Initializing job scraper...")
     init_db()
     
-    print("\nScraping Abt Global...")
-    abt_jobs = scrape_abt()
-    print(f"Found {len(abt_jobs)} total Abt jobs")
-    new_abt_jobs = store_jobs(abt_jobs)
-    display_new_jobs(new_abt_jobs)
+    #print("\nScraping Abt Global...")
+    #abt_jobs = scrape_abt()
+    #print(f"Found {len(abt_jobs)} total Abt jobs")
+    #new_abt_jobs = store_jobs(abt_jobs)
+    #display_new_jobs(new_abt_jobs)
+
+    print("\nScraping American Forests...")
+    americanforests_jobs = scrape_americanforests()
+    print(f"Found {len(americanforests_jobs)} total American Forests jobs")
+    new_americanforests_jobs = store_jobs(americanforests_jobs)
+    display_new_jobs(new_americanforests_jobs)
 
     print("\nScraping Earthjustice...")
     earthjustice_jobs = scrape_earthjustice()
     print(f"Found {len(earthjustice_jobs)} total Earthjustice jobs")
     new_earthjustice_jobs = store_jobs(earthjustice_jobs)
     display_new_jobs(new_earthjustice_jobs)
+
+    #print("\nScraping Esri...")
+    #esri_jobs = scrape_esri()
+    #print(f"Found {len(esri_jobs)} total Esri jobs")
+    #new_esri_jobs = store_jobs(esri_jobs)
+    #display_new_jobs(new_esri_jobs)
 
     print("\nScraping GeoOwl...")
     geoowl_jobs = scrape_geoowl()
@@ -71,6 +83,12 @@ if __name__ == "__main__":
     print(f"Found {len(phi_jobs)} total PHI jobs")
     new_phi_jobs = store_jobs(phi_jobs)
     display_new_jobs(new_phi_jobs)
+
+    print("\nScraping Planet Labs...")
+    planet_jobs = scrape_planet()
+    print(f"Found {len(planet_jobs)} total Planet Labs jobs")
+    new_planet_jobs = store_jobs(planet_jobs)
+    display_new_jobs(new_planet_jobs)
 
     print("\nScraping RTI International...")
     rti_jobs = scrape_rti()
