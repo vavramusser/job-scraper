@@ -15,6 +15,7 @@ from scrapers.scraper_earthdaily import scrape_earthdaily
 from scrapers.scraper_earthjustice import scrape_earthjustice
 from scrapers.scraper_esri import scrape_esri
 from scrapers.scraper_geoowl import scrape_geoowl
+from scrapers.scraper_greenpeace import scrape_greenpeace
 from scrapers.scraper_phi import scrape_phi
 from scrapers.scraper_planet import scrape_planet
 from scrapers.scraper_innocence import scrape_innocence
@@ -86,6 +87,12 @@ if __name__ == "__main__":
     print(f"Found {len(geoowl_jobs)} total GeoOwl jobs")
     new_geoowl_jobs = store_jobs(geoowl_jobs)
     display_new_jobs(new_geoowl_jobs)
+
+    print("\nScraping Greenpeace...")
+    greenpeace_jobs = scrape_greenpeace()
+    print(f"Found {len(greenpeace_jobs)} total Greenpeace jobs")
+    new_greenpeace_jobs = store_jobs(greenpeace_jobs)
+    display_new_jobs(new_greenpeace_jobs)
 
     print("\nScraping Innocence Project...")
     innocence_jobs = scrape_innocence()
