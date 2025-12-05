@@ -21,6 +21,8 @@ env/
 Thumbs.db
 
 # test code
+scrapers (development)/
+scrapers (old versions)/
 main_tester.py
 test.py
 

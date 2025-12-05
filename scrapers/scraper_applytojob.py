@@ -1,39 +1,38 @@
-# scraper for Earth Justice
-# last updated 11/29/2025
-
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 
-def scrape_earthjustice():
-    
-    print(f"\nScraping jobs from Earth Justice")
+# generic function to scrape jobs from Apply to Job Boards
+def scrape_applytojob(slug, company):
+
+    print(f"\nScraping jobs from {company}")
     print(f"{'='*60}")
-    
-    base_url = "https://earthjustice.org/about/jobs"
-    
+
+    base_url = "https://" + slug + ".applytojob.com"
+
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36',
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
     }
     
     jobs = []
-    
+        
     try:
+
         response = requests.get(base_url, headers = headers, timeout = 15)
         response.raise_for_status()
         soup = BeautifulSoup(response.content, 'html.parser')
-        job_list = soup.find('div', {'data-node': 'eqc9k3sjw4tr'}).find_all('p', class_='m-0')
+        job_list = soup.find_all('li', class_='list-group-item')
         
         print(f"Found {len(job_list)} jobs\n")
-        
-        for job_data in job_list:
 
+        for job_data in job_list:
+            
             # title
             title = job_data.find('a').get_text(strip = True)
 
             # location
-            location = job_data.find('a').find_next_sibling('p', class_='p_size--small')
+            location = job_data.find('i', class_='fa-map-marker').parent.get_text(strip = True)
 
             # job URL
             url = job_data.find("a").get("href", "")
@@ -41,7 +40,7 @@ def scrape_earthjustice():
             # create job entry
             job = {
                 #"id": id,
-                "company": "Earthjustice",
+                "company": company,
                 "title": title,
                 "location": location,
                 #"salary_range": salary_range,
@@ -55,16 +54,19 @@ def scrape_earthjustice():
         
             print(f"  - {title}")
 
-        print(f"\nSuccessfully scraped {len(jobs)} jobs from Earthjustice")
-        print(f"{'='*60}")      
-    
+        print(f"\nSuccessfully scraped {len(jobs)} jobs from {company}")
+        print(f"{'='*60}")
+
     except requests.exceptions.RequestException as e:
-        print(f"Error fetching jobs from Earthjustice: {e}")
+        print(f"Error fetching jobs from HTML: {e}")
     except Exception as e:
         print(f"Unexpected error: {e}")
     
     return jobs
 
 if __name__ == "__main__":
-    
-    scrape_earthjustice()
+
+    # GeoOwl
+    jobs_geoowl = scrape_applytojob(
+        slug = "geoowl",
+        company = "GeoOwl")

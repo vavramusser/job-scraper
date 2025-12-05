@@ -4,7 +4,8 @@ import sqlite3
 app = Flask(__name__)
 
 def get_jobs():
-    """Get all jobs from database"""
+
+    # get all jobs from database
     conn = sqlite3.connect('jobs.db')
     c = conn.cursor()
     
