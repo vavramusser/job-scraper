@@ -406,6 +406,105 @@
       "params": {
         "slug": "npowermedicine"
       }
+    },
+    {
+      "company": "Ford Foundation",
+      "scraper": "workday",
+      "params": {
+        "company_slug": "fordfoundation",
+        "page_slug": "FordFoundationCareerPage",
+        "region": "wd1"
+      }
+    },
+    {
+      "company": "Gates Foundation",
+      "scraper": "workday",
+      "params": {
+        "company_slug": "gatesfoundation",
+        "page_slug": "Gates",
+        "region": "wd1"
+      }
+    },
+    {
+      "company": "John D. and Catherine T. MacArthur Foundation",
+      "scraper": "workday",
+      "params": {
+        "company_slug": "macfound",
+        "page_slug": "MAC_FOUND_EXT_CAREERS",
+        "region": "wd1"
+      }
+    },
+    {
+      "company": "Urban Institute",
+      "scraper": "workday",
+      "params": {
+        "company_slug": "urban",
+        "page_slug": "Urban-Careers",
+        "region": "wd1"
+      }
+    },
+    {
+      "company": "RAND Corporation",
+      "scraper": "workday",
+      "params": {
+        "company_slug": "rand",
+        "page_slug": "External_Career_Site",
+        "region": "wd5"
+      }
+    },
+    {
+      "company": "Pew Research Center",
+      "scraper": "workday",
+      "params": {
+        "company_slug": "pewtrusts",
+        "page_slug": "CenterExternal",
+        "region": "wd5"
+      }
+    },
+    {
+      "company": "Open Society Foundations",
+      "scraper": "workday",
+      "params": {
+        "company_slug": "osfglobal",
+        "page_slug": "OSF",
+        "region": "wd5"
+      }
+    },
+    {
+      "company": "Obama Foundation",
+      "scraper": "workday",
+      "params": {
+        "company_slug": "obama",
+        "page_slug": "Careers",
+        "region": "wd5"
+      }
+    },
+    {
+      "company": "Loyola Marymount University",
+      "scraper": "workday",
+      "params": {
+        "company_slug": "lmu",
+        "page_slug": "Careers",
+        "region": "wd1"
+      }
+    },
+    {
+      "company": "International Justice Mission (IJM)",
+      "scraper": "workday",
+      "params": {
+        "company_slug": "ijm",
+        "page_slug": "careers-ijm",
+        "region": "wd5"
+      }
+    },
+    {
+      "company": "Environmental Resources Management (ERM)",
+      "scraper": "workday",
+      "params": {
+        "company_slug": "erm",
+        "page_slug": "ERM_Careers",
+        "region": "wd3"
+      }
     }
   ]
 }

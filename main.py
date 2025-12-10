@@ -9,6 +9,7 @@ from scrapers.apicall_lever import apicall_lever
 from scrapers.apicall_resumator import apicall_resumator
 from scrapers.apicall_ultipro import apicall_ultipro
 from scrapers.apicall_workable import apicall_workable
+from scrapers.apicall_workday import apicall_workday
 from scrapers.scraper_applytojob import scrape_applytojob
 from scrapers.scraper_greenhouse import scrape_greenhouse
 from scrapers.scraper_oraclecloudhcm import scrape_oracle
@@ -59,6 +60,13 @@ SCRAPERS = {
         slug=params['slug'],
         company=params['company']
     ),
+    'workday': lambda params: apicall_workday(
+        company_slug=params['company_slug'],
+        page_slug=params['page_slug'],
+        region=params['region'],
+        company=params['company']
+    ),
+
     'unique_earthjustice': lambda params: scrape_earthjustice(),
     'unique_esri': lambda params: scrape_esri(),
     'unique_phi': lambda params: scrape_phi(),

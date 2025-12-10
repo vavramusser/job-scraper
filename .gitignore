@@ -26,6 +26,7 @@ scrapers (old versions)/
 main_old.py
 main_tester.py
 view_jobs.py
+test.ipynb
 test.py
 
 # meta information

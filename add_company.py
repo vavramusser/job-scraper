@@ -37,6 +37,7 @@ def add_company_interactive():
     # Select scraper type
     print("\nAvailable scraper types:")
     scrapers = [
+        "workday",
         "adp_workforce",
         "workable", 
         "resumator",
@@ -79,6 +80,11 @@ def add_company_interactive():
         params['site_number'] = input("site_number: ").strip()
     elif scraper == "lever":
         params["slug"] = input("slug: ").strip()
+    elif scraper == "workday":
+        params["company_slug"] = input("company_slug: ").strip()
+        params["page_slug"] = input("page_slug: ").strip()
+        params["region"] = input("region: ").strip()
+
     # unique scrapers don't need params
     
     notes = input("Notes (optional): ").strip()
