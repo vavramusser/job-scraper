@@ -44,6 +44,7 @@ def add_company_interactive():
         "applytojob",
         "greenhouse",
         "oracle",
+        "lever",
         "unique_earthjustice",
         "unique_esri",
         "unique_phi",
@@ -76,6 +77,8 @@ def add_company_interactive():
         params['tenant_id'] = input("tenant_id: ").strip()
         params['region'] = input("region: ").strip()
         params['site_number'] = input("site_number: ").strip()
+    elif scraper == "lever":
+        params["slug"] = input("slug: ").strip()
     # unique scrapers don't need params
     
     notes = input("Notes (optional): ").strip()

@@ -342,15 +342,6 @@
       }
     },
     {
-      "company": "JP Morgan Chase",
-      "scraper": "oracle",
-      "params": {
-        "tenant_id": "jpmc",
-        "region": "",
-        "site_number": "CX_3001"
-      }
-    },
-    {
       "company": "National Committee for Quality Assurance (NCQA)",
       "scraper": "ultipro",
       "params": {
@@ -387,6 +378,34 @@
       "company": "Research Triangle Institue (RTI)",
       "scraper": "unique_rti",
       "params": {}
+    },
+    {
+      "company": "Nimble Rx",
+      "scraper": "lever",
+      "params": {
+        "slug": "nimblerx"
+      }
+    },
+    {
+      "company": "Spotify",
+      "scraper": "lever",
+      "params": {
+        "slug": "spotify"
+      }
+    },
+    {
+      "company": "Richard L. Duchossois Foundation (RLD)",
+      "scraper": "lever",
+      "params": {
+        "slug": "rld-foundation"
+      }
+    },
+    {
+      "company": "N-Power Medicine",
+      "scraper": "lever",
+      "params": {
+        "slug": "npowermedicine"
+      }
     }
   ]
 }

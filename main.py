@@ -5,6 +5,7 @@ from database import init_db, store_jobs
 
 # import scrapers
 from scrapers.apicall_adpworkforcenow import apicall_adpworkforcenow
+from scrapers.apicall_lever import apicall_lever
 from scrapers.apicall_resumator import apicall_resumator
 from scrapers.apicall_ultipro import apicall_ultipro
 from scrapers.apicall_workable import apicall_workable
@@ -52,6 +53,10 @@ SCRAPERS = {
         tenant_id=params['tenant_id'],
         region=params['region'],
         site_number=params['site_number'],
+        company=params['company']
+    ),
+    'lever': lambda params: apicall_lever(
+        slug=params['slug'],
         company=params['company']
     ),
     'unique_earthjustice': lambda params: scrape_earthjustice(),
