@@ -12,8 +12,10 @@ def apicall_workable(url_extension, company):
     print(f"\nScraping jobs from {company}")
     print(f"{'='*60}")
 
-    api_url_base = "https://apply.workable.com/api/v1/widget/accounts/"
-    api_url = api_url_base + url_extension
+    api_url = f"https://apply.workable.com/api/v3/accounts/{url_extension}/jobs"
+
+    params = {}
+    method = "POST"
 
     jobs = []
 
@@ -23,11 +25,10 @@ def apicall_workable(url_extension, company):
     
     try:
         
-        response = requests.get(api_url, params = params, headers = headers, timeout = 15)
+        response = requests.post(api_url, json = {}, headers = headers, timeout = 15)
         response.raise_for_status()
         data = response.json()
-        job_list = data.get('jobs', [])
-
+        job_list = data.get('results', [])
         print(f"Found {len(job_list)} jobs\n")
 
         for job_data in job_list:
@@ -39,19 +40,25 @@ def apicall_workable(url_extension, company):
             title = job_data.get("title", "Not Specified")
 
             # location
-            city = job_data.get("city", "")
-            state = job_data.get("state", "")
-            country = job_data.get("country_id", "")
-            location_parts = [p for p in [city, state, country] if p]
+            location_data = job_data.get("location", {})
+            city = location_data.get("city", "")
+            region = location_data.get("region", "")
+            country = location_data.get("country", "")
+            location_parts = [p for p in [city, region, country] if p]
             location = ', '.join(location_parts) if location_parts else 'Not specified'
 
             # salary range
 
             # open date
-            date_open = datetime.strptime(job_data.get("published_on", ""), "%Y-%m-%d").date()
-           
+            published = job_data.get("published", "")
+            if published:
+                date_open = datetime.fromisoformat(published.replace('Z', '+00:00')).date()
+            else:
+                date_open = None
+                        
            # job URL
-            url = job_data.get("url")
+            shortcode = job_data.get("shortcode", "")
+            url = f"https://apply.workable.com/innocence-project/j/{shortcode}/" if shortcode else ""
 
             # create job entry
             job = {
@@ -82,6 +89,22 @@ def apicall_workable(url_extension, company):
 
 if __name__ == "__main__":
 
-    # Innocence Project
-    urlextension_innocenceproject = "675118"
-    jobs_earthdaily = apicall_workable(urlextension_innocenceproject, "Innnocence Project")
+    apicall_workable(
+        url_extension = "blue-tiger",
+        company = "Blue Tiger")
+
+    apicall_workable(
+        url_extension = "bme-strategies",
+        company = "BME Strategies")
+    
+    apicall_workable(
+        url_extension = "claritasrx",
+        company = "Claritas Rx")
+    
+    apicall_workable(
+        url_extension = "innocence-project",
+        company = "Innocence Project")
+
+    apicall_workable(
+        url_extension = "murmuration",
+        company = "Murmuration")

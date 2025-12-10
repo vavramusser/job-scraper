@@ -84,7 +84,7 @@ def scrape_oracle(tenant_id, region, site_number, company):
 if __name__ == "__main__":
 
     # Abt Global
-    jobs_abt = scrape_oracle(
+    scrape_oracle(
         tenant_id = "egpy",
         region = "us2",
         site_number = "CX_3001",
@@ -92,9 +92,24 @@ if __name__ == "__main__":
     )
 
     # DC Water
-    jobs_dcwater = scrape_oracle(
+    scrape_oracle(
         tenant_id = "elxb",
         region = "us2",
         site_number = "CX_3001",
         company = "DC Water"
+    )
+
+    # JP Morgan Chase
+    #scrape_oracle(
+    #    tenant_id = "jpmc",
+    #    region = "us2",
+    #    site_number = "CX_1001",
+    #    company = "JP Morgan Chase")
+
+    # Blue Shield of California
+    scrape_oracle(
+        tenant_id = "ecge",
+        region = "us2",
+        site_number = "CX_1003",
+        company = "Blue Shield of California"
     )

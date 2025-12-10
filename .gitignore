@@ -23,9 +23,12 @@ Thumbs.db
 # test code
 scrapers (development)/
 scrapers (old versions)/
+main_old.py
 main_tester.py
+view_jobs.py
 test.py
 
 # meta information
 metadata/
+templates/
 templates/

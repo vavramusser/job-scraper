@@ -44,21 +44,30 @@ def apicall_adpworkforcenow(cid, ccId, company):
 
             # location
             location_list = job_data.get('requisitionLocations', [])
-            location_data = location_list[0]
-            city = location_data.get("cityName", "")
-            state = location_data.get('stateProvCode', '')
-            country = location_data.get('countryCode', '')
+            location_data = location_list[0] if location_list else ""
+            if location_data:
+                city = location_data.get("cityName", "")
+                state = location_data.get('stateProvCode', '')
+                country = location_data.get('countryCode', '')
+                location_shortname = location_data.get("nameCode").get("shortName")
+            else:
+                city = ""
+                state = ""
+                country = ""
+                location_shortname = ""
             location_parts = [p for p in [city, state, country] if p]
-            location_shortname = location_data.get("nameCode").get("shortName")
             location = ', '.join(location_parts) if location_parts else (location_shortname if location_shortname else 'Not specified')
 
             # salary range
-            salary_min = int(job_data.get("payGradeRange").get("minimumRate").get("amountValue"))
-            salary_max = int(job_data.get("payGradeRange").get("maximumRate").get("amountValue"))
-            salary_range = (
-                f"${salary_min:,} - ${salary_max:,}" if salary_min > 0 and salary_max > 0
-                else "Not specified"
-            )
+            salary_min_raw = job_data.get("payGradeRange", {}).get("minimumRate", {}).get("amountValue")
+            salary_min = int(salary_min_raw) if salary_min_raw is not None else None
+            salary_max_raw = job_data.get("payGradeRange", {}).get("maximumRate", {}).get("amountValue")
+            salary_max = int(salary_max_raw) if salary_max_raw is not None else None
+            if salary_min and salary_max:
+                salary_range = (
+                    f"${salary_min:,} - ${salary_max:,}" if salary_min > 0 and salary_max > 0
+                    else "Not specified")
+            else: salary_range = ""           
             
             # open date
             date_open = date_open = datetime.strptime(job_data.get("postDate", ""), "%Y-%m-%dT%H:%M:%S.%f%z").date()
@@ -101,6 +110,32 @@ def apicall_adpworkforcenow(cid, ccId, company):
 if __name__ == "__main__":
 
     # American Forests
-    cid_americanforests = "f4cdd59b-bdcf-4e58-9e68-112518aa9a0a"
-    ccId_americanforests = "19000101_000003"  
-    jobs_americanforests = apicall_adpworkforcenow(cid_americanforests, ccId_americanforests, "American Forests")
+    apicall_adpworkforcenow(
+        cid = "f4cdd59b-bdcf-4e58-9e68-112518aa9a0a",
+        ccId = "19000101_000003",
+        company = "American Forests")
+    # CDC Foundation
+    apicall_adpworkforcenow(
+        cid = "014dfa20-d261-4f83-8d77-5edb4e15f0f8",
+        ccId = "19000101_000001",
+        company = "CDC Foundation")
+    # Everytown for Gun Safety
+    apicall_adpworkforcenow(
+        cid = "575de07a-c083-4788-8cd8-24b17ba8cca5",
+        ccId = "19000101_000001",
+        company = "Everytown for Gun Safety")
+    # Fair Labor Association
+    apicall_adpworkforcenow(
+        cid = "c6f14a31-8de0-45d7-b429-a90525d403c0",
+        ccId = "19000101_000001",
+        company = "Fair Labor Association")
+    # Pokagon Band
+    apicall_adpworkforcenow(
+        cid = "0528a983-eff0-40d1-9539-1ae4fdee6aff",
+        ccId = "19000101_000001",
+        company = "Pokagon Band")
+    # United Hospital Fund
+    apicall_adpworkforcenow(
+        cid = "2e3a3301-b551-4bff-aac6-dbbad84e8de7",
+        ccId = "19000101_000001",
+        company = "United Hospital Fund")

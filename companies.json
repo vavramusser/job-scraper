@@ -1,0 +1,392 @@
+{
+  "companies": [
+    {
+      "company": "American Forests",
+      "scraper": "adp_workforce",
+      "params": {
+        "cid": "f4cdd59b-bdcf-4e58-9e68-112518aa9a0a",
+        "ccId": "19000101_000003"
+      }
+    },
+    {
+      "company": "CDC Foundation",
+      "scraper": "adp_workforce",
+      "params": {
+        "cid": "014dfa20-d261-4f83-8d77-5edb4e15f0f8",
+        "ccId": "19000101_000001"
+      }
+    },
+    {
+      "company": "Everyone for Gun Safety",
+      "scraper": "adp_workforce",
+      "params": {
+        "cid": "575de07a-c083-4788-8cd8-24b17ba8cca5",
+        "ccId": "19000101_000001"
+      }
+    },
+    {
+      "company": "Fair Labor Association",
+      "scraper": "adp_workforce",
+      "params": {
+        "cid": "c6f14a31-8de0-45d7-b429-a90525d403c0",
+        "ccId": "19000101_000001"
+      }
+    },
+    {
+      "company": "Pokagon Band",
+      "scraper": "adp_workforce",
+      "params": {
+        "cid": "0528a983-eff0-40d1-9539-1ae4fdee6aff",
+        "ccId": "19000101_000001"
+      }
+    },
+    {
+      "company": "United Hospital Fund",
+      "scraper": "adp_workforce",
+      "params": {
+        "cid": "2e3a3301-b551-4bff-aac6-dbbad84e8de7",
+        "ccId": "19000101_000001"
+      }
+    },
+    {
+      "company": "Earth Daily",
+      "scraper": "resumator",
+      "params": {
+        "apikey": "mJbxSpDuFZEZ2pqWz8SssgHOfFd3iMYX"
+      }
+    },
+    {
+      "company": "Blue Tiger",
+      "scraper": "workable",
+      "params": {
+        "url_extension": "blue-tiger"
+      }
+    },
+    {
+      "company": "BME Strategies",
+      "scraper": "workable",
+      "params": {
+        "url_extension": "bme-strategies"
+      }
+    },
+    {
+      "company": "Claritas Rx",
+      "scraper": "workable",
+      "params": {
+        "url_extension": "claritasrx"
+      }
+    },
+    {
+      "company": "Innocence Project",
+      "scraper": "workable",
+      "params": {
+        "url_extension": "innocence-project"
+      }
+    },
+    {
+      "company": "Murmuration",
+      "scraper": "workable",
+      "params": {
+        "url_extension": "murmuration"
+      }
+    },
+    {
+      "company": "Center for Justice Innovation",
+      "scraper": "applytojob",
+      "params": {
+        "slug": "innovatingjustice"
+      }
+    },
+    {
+      "company": "Corner Alliance",
+      "scraper": "applytojob",
+      "params": {
+        "slug": "corneralliance"
+      }
+    },
+    {
+      "company": "Documented",
+      "scraper": "applytojob",
+      "params": {
+        "slug": "documented"
+      }
+    },
+    {
+      "company": "DRT Strategies",
+      "scraper": "applytojob",
+      "params": {
+        "slug": "drtstrategies"
+      }
+    },
+    {
+      "company": "GeoOwl",
+      "scraper": "applytojob",
+      "params": {
+        "slug": "geoowl"
+      }
+    },
+    {
+      "company": "Rincon Consultants",
+      "scraper": "applytojob",
+      "params": {
+        "slug": "rinconconsultants"
+      }
+    },
+    {
+      "company": "XTS",
+      "scraper": "applytojob",
+      "params": {
+        "slug": "xtscareers"
+      }
+    },
+    {
+      "company": "Aquia",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "aquia"
+      }
+    },
+    {
+      "company": "Ardent",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "ardentmc"
+      }
+    },
+    {
+      "company": "Arine",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "arine"
+      }
+    },
+    {
+      "company": "AXS",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "axs"
+      }
+    },
+    {
+      "company": "Beacon Biosignals",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "beaconbiosignals"
+      }
+    },
+    {
+      "company": "Blue Rose Research",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "blueroseresearch"
+      }
+    },
+    {
+      "company": "Cohere Health",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "coherehealth"
+      }
+    },
+    {
+      "company": "Compass Pathways",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "compasspathways"
+      }
+    },
+    {
+      "company": "Consumer Reports",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "consumerreports"
+      }
+    },
+    {
+      "company": "Garner Health",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "garnerhealth"
+      }
+    },
+    {
+      "company": "Greenpeace",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "greenpeace"
+      }
+    },
+    {
+      "company": "Komodo Health",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "komodohealth"
+      }
+    },
+    {
+      "company": "Misfits Market",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "misfitsmarket"
+      }
+    },
+    {
+      "company": "Move On",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "moveonorg"
+      }
+    },
+    {
+      "company": "NYC Criminal Justice Agency",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "criminaljusticeagency"
+      }
+    },
+    {
+      "company": "Omada Health",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "omadahealth"
+      }
+    },
+    {
+      "company": "Precision AQ",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "precisionaq"
+      }
+    },
+    {
+      "company": "Precision Medicine Group",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "precisionmedicinegroup"
+      }
+    },
+    {
+      "company": "Pro Publica",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "propublica"
+      }
+    },
+    {
+      "company": "Skylight",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "skylighthq"
+      }
+    },
+    {
+      "company": "Southern Poverty Law Center",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "southernpovertylawcenter"
+      }
+    },
+    {
+      "company": "Strata",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "stratacareers"
+      }
+    },
+    {
+      "company": "Trella Health",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "trellahealth"
+      }
+    },
+    {
+      "company": "Valo Health",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "valohealth"
+      }
+    },
+    {
+      "company": "Vera Institute of Justice",
+      "scraper": "greenhouse",
+      "params": {
+        "slug": "verainstituteofjustice"
+      }
+    },
+    {
+      "company": "Abt Global",
+      "scraper": "oracle",
+      "params": {
+        "tenant_id": "egpy",
+        "region": "us2",
+        "site_number": "CX_3001"
+      }
+    },
+    {
+      "company": "Blue Shield of California",
+      "scraper": "oracle",
+      "params": {
+        "tenant_id": "ecge",
+        "region": "us2",
+        "site_number": "CX_1003"
+      }
+    },
+    {
+      "company": "DC Water",
+      "scraper": "oracle",
+      "params": {
+        "tenant_id": "elxb",
+        "region": "us2",
+        "site_number": "CX_3001"
+      }
+    },
+    {
+      "company": "JP Morgan Chase",
+      "scraper": "oracle",
+      "params": {
+        "tenant_id": "jpmc",
+        "region": "",
+        "site_number": "CX_3001"
+      }
+    },
+    {
+      "company": "National Committee for Quality Assurance (NCQA)",
+      "scraper": "ultipro",
+      "params": {
+        "company_id": "NAT1056NCFQA",
+        "board_id": "d207d599-5f3a-4f5a-a1be-bada9a5675b1"
+      }
+    },
+    {
+      "company": "Earth Justice",
+      "scraper": "unique_earthjustice",
+      "params": {}
+    },
+    {
+      "company": "Esri",
+      "scraper": "unique_esri",
+      "params": {}
+    },
+    {
+      "company": "The Nature Conservancy",
+      "scraper": "unique_tnc",
+      "params": {}
+    },
+    {
+      "company": "Public Health Institute (PHI)",
+      "scraper": "unique_phi",
+      "params": {}
+    },
+    {
+      "company": "Planet Labs",
+      "scraper": "unique_planet",
+      "params": {}
+    },
+    {
+      "company": "Research Triangle Institue (RTI)",
+      "scraper": "unique_rti",
+      "params": {}
+    }
+  ]
+}
